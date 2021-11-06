@@ -26,6 +26,7 @@ export default class RestaurantsDAO {
 		page = 0,
 		restaurantsPerPage = 20,
 	} = {}) {
+
 		let query
 		if (filters) {
 			if ("name" in filters) {
@@ -40,10 +41,8 @@ export default class RestaurantsDAO {
 		}
 
 		let cursor
-
 		try {
-			cursor = await restaurants
-				.find(query)
+			cursor = await restaurants.find(query)
 		}
 		catch (e) {
 			console.error(`Unable to issue find command, ${e}`)
@@ -51,7 +50,6 @@ export default class RestaurantsDAO {
 		}
 
 		const displayCursor = cursor.limit(restaurantsPerPage).skip(restaurantsPerPage * page)
-
 		try {
 			const restaurantsList = await displayCursor.toArray()
 			const totalNumRestaurants = await restaurants.countDocuments(query)

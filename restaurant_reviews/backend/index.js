@@ -10,11 +10,10 @@ const port = process.env.PORT || 8000
 
 MongoClient.connect(
     process.env.RESTREVIEWS_DB_URI,
-    // {
-    //     poolSize: 50,
-    //     writeconcern: 2500,
-    //     useUnifiedTopology: true
-    // }
+    {
+        poolSize: 50,
+        useUnifiedTopology: true
+    }
 )
 .catch(err => {
     console.error(err.stack)
