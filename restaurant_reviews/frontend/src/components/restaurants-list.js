@@ -85,10 +85,14 @@ const RestaurantsList = props => {
 		}
 	};
 
+	const textFieldStyle = {
+		width: '33.3%'
+	};
+
 	return (
 		<div>
 			<div className="row pb-1">
-				<div className="input-group col-lg-4">
+				<div style={textFieldStyle} className="input-group col-lg-4">
 					<input
 						type="text"
 						className="form-control"
@@ -106,7 +110,7 @@ const RestaurantsList = props => {
 						</button>
 					</div>
 				</div>
-				<div className="input-group col-lg-4">
+				<div style={textFieldStyle} className="input-group col-lg-4">
 					<input
 						type="text"
 						className="form-control"
@@ -124,8 +128,7 @@ const RestaurantsList = props => {
 						</button>
 					</div>
 				</div>
-				<div className="input-group col-lg-4">
-
+				<div style={textFieldStyle} className="input-group col-lg-4">
 					<select onChange={onChangeSearchCuisine}>
 						{cuisines.map(cuisine => {
 							return (
@@ -142,9 +145,9 @@ const RestaurantsList = props => {
 							Search
 						</button>
 					</div>
-
 				</div>
 			</div>
+			<br/>
 			<div className="row">
 				{restaurants.map((restaurant) => {
 					const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
@@ -168,8 +171,6 @@ const RestaurantsList = props => {
 						</div>
 					);
 				})}
-
-
 			</div>
 		</div>
 	);

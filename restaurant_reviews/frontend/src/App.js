@@ -22,9 +22,9 @@ function App() {
 	return (
 		<div>
 			<nav className="navbar navbar-expand navbar-dark bg-dark">
-				<a href="/restaurants" className="navbar-brand">
+				<Link to={"/restaurants"} className="navbar-brand">
 					Restaurant Reviews
-				</a>
+				</Link>
 				<div className="navbar-nav mr-auto">
 					<li className="nav-item">
 						<Link to={"/restaurants"} className="nav-link">
