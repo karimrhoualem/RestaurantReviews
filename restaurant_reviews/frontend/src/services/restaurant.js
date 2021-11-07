@@ -28,7 +28,6 @@ class RestaurantDataService {
 	getCuisines(id) {
 		return http.get(`/cuisines`);
 	}
-
 }
 
 export default new RestaurantDataService();

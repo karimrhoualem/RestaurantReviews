@@ -19,10 +19,14 @@ function App() {
 		setUser(null)
 	}
 
+	const leftMarginStyle = {
+		'margin-left': '20px'
+	};
+
 	return (
 		<div>
 			<nav className="navbar navbar-expand navbar-dark bg-dark">
-				<Link to={"/restaurants"} className="navbar-brand">
+				<Link to={"/restaurants"} className="navbar-brand" style={leftMarginStyle}>
 					Restaurant Reviews
 				</Link>
 				<div className="navbar-nav mr-auto">

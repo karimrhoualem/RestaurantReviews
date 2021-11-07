@@ -35,7 +35,6 @@ const RestaurantsList = props => {
 			.then(response => {
 				console.log(response.data);
 				setRestaurants(response.data.restaurants);
-
 			})
 			.catch(e => {
 				console.log(e);
@@ -47,7 +46,6 @@ const RestaurantsList = props => {
 			.then(response => {
 				console.log(response.data);
 				setCuisines(["All Cuisines"].concat(response.data));
-
 			})
 			.catch(e => {
 				console.log(e);
@@ -70,10 +68,16 @@ const RestaurantsList = props => {
 	};
 
 	const findByName = () => {
+		if (searchZip != "") {
+			setSearchZip("");
+		}
 		find(searchName, "name")
 	};
 
 	const findByZip = () => {
+		if (searchName != "") {
+			setSearchName("");
+		}
 		find(searchZip, "zipcode")
 	};
 
@@ -81,6 +85,12 @@ const RestaurantsList = props => {
 		if (searchCuisine == "All Cuisines") {
 			refreshList();
 		} else {
+			if (searchName != "") {
+				setSearchName("");
+			}
+			if (searchZip != "") {
+				setSearchZip("");
+			}
 			find(searchCuisine, "cuisine")
 		}
 	};
