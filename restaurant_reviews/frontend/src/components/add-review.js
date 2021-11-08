@@ -50,6 +50,10 @@ const AddReview = props => {
 
 	};
 
+	const textFieldStyle = {
+		width: '33.3%'
+	};
+
 	return (
 		<div>
 			{props.user ? (
@@ -63,7 +67,7 @@ const AddReview = props => {
 						</div>
 					) : (
 						<div>
-							<div className="form-group">
+							<div style={textFieldStyle} className="form-group">
 								<label htmlFor="description">{editing ? "Edit" : "Create"} Review</label>
 								<input
 									type="text"
@@ -75,6 +79,7 @@ const AddReview = props => {
 									name="text"
 								/>
 							</div>
+							<br/>
 							<button onClick={saveReview} className="btn btn-success">
 								Submit
 							</button>

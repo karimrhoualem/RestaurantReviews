@@ -19,10 +19,14 @@ const Login = props => {
 		props.history.push('/');
 	}
 
+	const textFieldStyle = {
+		width: '33.3%'
+	};
+
 	return (
 		<div className="submit-form">
 			<div>
-				<div className="form-group">
+				<div style={textFieldStyle} className="form-group">
 					<label htmlFor="user">Username</label>
 					<input
 						type="text"
@@ -34,8 +38,8 @@ const Login = props => {
 						name="name"
 					/>
 				</div>
-
-				<div className="form-group">
+				<br/>
+				<div style={textFieldStyle} className="form-group">
 					<label htmlFor="id">ID</label>
 					<input
 						type="text"
@@ -47,7 +51,7 @@ const Login = props => {
 						name="id"
 					/>
 				</div>
-
+				<br/>
 				<button onClick={login} className="btn btn-success">
 					Login
 				</button>
